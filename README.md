@@ -5,4 +5,5 @@ This is a collection of skills from different sources. Some them are customized 
 ## Sources
 
 - airails.dev
-
+- https://github.com/Jeffallan/claude-skills
+- https://claudemarketplaces.com/skills/planetscale/database-skills/postgres
