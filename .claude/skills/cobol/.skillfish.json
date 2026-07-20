@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "cobol",
+  "owner": "g1joshi",
+  "repo": "agent-skills",
+  "path": "skills/languages/cobol",
+  "branch": "main",
+  "sha": "73717c0940643202dea7efda4b9a1980a8d8f074",
+  "source": "manual"
+}
