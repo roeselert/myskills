@@ -135,3 +135,13 @@ Findings are triaged with the user before merge; nothing is silently fixed.
 - [ ] CLAUDE.md 1.3 / 1.4 updated; data model and flow diagram updated
 - [ ] Technology decisions recorded in 1.5 if any were made
 - [ ] Manual review prepared; agentic review run and findings triaged
+
+# How to start a new project
+
+1. Create CLAUDE.md if not present
+2.1 Ask for system vision 
+2.2 Ask for quality goals
+2.3 create the paragraph
+3. Ask for stake holder and create the paragraph
+4. Ask for system context and create diagram
+5. Aks for technology choices and creat paragraph
