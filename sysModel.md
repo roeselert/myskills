@@ -52,72 +52,66 @@ It treats the DSL as the **single source of truth** for system context and archi
 ## SysModelAgent Definition
 
 ```markdown
-skill "SysModelAgent" {
+context {
+  system "OrderManagement" purpose: "Order lifecycle"
 
-  description: "Parses, validates, analyzes, and generates software from SysModel DSL."
-
-  inputs {
-    model: SysModelDSL
+  stakeholders {
+    "Customer" role: "Initiates orders"
+    "SupportAgent" role: "Manual handling"
+    "FinanceDept" role: "Billing"
   }
 
-  capabilities {
-
-    parse {
-      action: "Convert DSL text into structured AST"
-      output: SysModelAST
-    }
-
-    validate {
-      action: "Check AST for structural correctness"
-      rules: [
-        "Unique component names",
-        "Entities must define fields",
-        "Integrated systems must exist",
-        "Controls must define purpose",
-        "Interfaces must define payload or target"
-      ]
-      output: ValidationReport
-    }
-
-    analyze {
-      action: "Derive architecture metadata"
-      outputs: [
-        ComponentGraph,
-        InterfaceMap,
-        EntityMap,
-        IntegrationMap
-      ]
-    }
-
-    generate {
-      action: "Generate software artifacts from AST"
-      artifacts: [
-        "Component modules",
-        "Entity classes",
-        "Interface adapters",
-        "Integration clients",
-        "Configuration files",
-        "Architecture documentation"
-      ]
-      output: GeneratedCodeBundle
-    }
-
-    update {
-      action: "Modify SysModel DSL based on user instructions"
-      constraints: [
-        "Preserve required sections",
-        "Maintain deterministic structure",
-        "No behavior outside controls"
-      ]
-      output: UpdatedSysModelDSL
-    }
+  integratedSystems {
+    "CRM" type: external
+    "PaymentGateway" type: external
+    "WarehouseSystem" type: external
   }
 
-  lifecycle {
-    onModelChange: [
-      "Re-parse",
-      "Re-validate",
-      "Re-generate artifacts"
-    ]
+  businessComponents {
+    "Order" meaning: "Purchase request"
+    "Invoice" meaning: "Billing document"
   }
 }
+
+architecture {
+  component "OrderProcessing" type: business {
+
+    interfaces {
+      inbound "CreateOrder" payload: OrderRequest
+      outbound "PaymentRequest" target: PaymentGateway
+    }
+
+    entities {
+      "Order" {
+        id: UUID
+        items: List<Item>
+        totalAmount: Money
+        status: OrderStatus
+      }
+    }
+
+    controls {
+      "OrderValidator" purpose: "Check completeness"
+      "PaymentOrchestrator" purpose: "Coordinate payment"
+    }
+  }
+
+  component "InventorySync" type: business {
+
+    interfaces {
+      outbound "StockQuery" target: WarehouseSystem
+    }
+
+    entities {
+      "Item" {
+        id: UUID
+        stock: Int
+      }
+    }
+
+    controls {
+      "StockUpdater" purpose: "Update item stock"
+    }
+  }
+}
+
