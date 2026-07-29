@@ -1,4 +1,12 @@
-# SysModelAgent Skill
+
+---
+name: SysModelAgent Skill
+description: This skill can be used to create an intemediate representation of a software system based on arc42 and bce
+
+---
+## Composition
+- compose with `bce` on how to design boundary-control-entity
+
 
 ## Purpose
 The **SysModelAgent** interprets, validates, and generates software from the SysModel DSL.  
@@ -6,9 +14,6 @@ It treats the DSL as the **single source of truth** for system context and archi
 
 ## Capabilities
 
-### Parse
-- Convert SysModel DSL text into a structured AST.
-- Normalize component, entity, interface, and control definitions.
 
 ### Validate
 - Ensure structural correctness of the model.
@@ -16,24 +21,9 @@ It treats the DSL as the **single source of truth** for system context and archi
   - All components must have unique names.
   - All entities must define at least one field.
   - All integrated systems referenced in interfaces must exist in `context.integratedSystems`.
-  - All controls must define a `purpose`.
-  - All inbound/outbound interfaces must specify a payload or target.
 
-### Analyze
-- Produce architecture metadata:
-  - ComponentGraph
-  - InterfaceMap
-  - EntityMap
-  - IntegrationMap
+ IntegrationMap
 
-### Generate
-- Produce software artifacts based on the AST:
-  - Component modules
-  - Entity classes
-  - Interface adapters
-  - Integration clients
-  - Configuration files
-  - Architecture documentation
 
 ### Update
 - Modify the SysModel DSL based on user instructions.
@@ -41,12 +31,8 @@ It treats the DSL as the **single source of truth** for system context and archi
   - Maintain deterministic structure.
   - Preserve required sections.
   - Never introduce behavior outside controls.
+- Every change in the source code must be reflected in the model. For controls it is important to capture the main flow and not every detail. 
 
-### Lifecycle
-- On every DSL change:
-  - Re-parse
-  - Re-validate
-  - Re-generate artifacts
 
 ---
 ## SysModelAgent Definition
@@ -114,4 +100,4 @@ architecture {
     }
   }
 }
-
+'''
