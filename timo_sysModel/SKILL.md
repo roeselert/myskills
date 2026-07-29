@@ -41,7 +41,7 @@ It treats the DSL as the **single source of truth** for system context and archi
 ---
 ## SysModelAgent Definition
 
-```
+```mermaid
 C4Context
     title System Context diagram for Internet Banking System
     Enterprise_Boundary(b0, "BankBoundary0") {
@@ -77,7 +77,7 @@ C4Context
     Rel(SystemC, customerA, "Sends e-mails
 ```
 ---
-```
+```mermaid
 classDiagram
     direction LR
     class Customer {
@@ -125,7 +125,7 @@ need to implement authorize()"
 ```
 ---
 
-```
+```mermaid
 sequenceDiagram
     autonumber
     actor Customer
