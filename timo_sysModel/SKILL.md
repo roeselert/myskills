@@ -32,7 +32,7 @@ It treats the DSL as the **single source of truth** for system context and archi
 ### Update
 - Modify the SysModel DSL based on user instructions.
 - Update constraints:
-  - Maintain deterministic structure.
+  - Maintain deterministic structure
   - Preserve required sections.
   - Never introduce behavior outside controls.
 - Every change in the source code must be reflected in the model. For controls it is important to capture the main flow and not every detail. 
@@ -42,6 +42,7 @@ It treats the DSL as the **single source of truth** for system context and archi
 ## SysModelAgent Definition
 
 ```mermaid
+
 C4Context
     title System Context diagram for Internet Banking System
     Enterprise_Boundary(b0, "BankBoundary0") {
@@ -71,10 +72,6 @@ C4Context
         }
     }
 
-    BiRel(customerA, SystemAA, "Uses")
-    BiRel(SystemAA, SystemE, "Uses")
-    Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
-    Rel(SystemC, customerA, "Sends e-mails
 ```
 ---
 ```mermaid
@@ -122,6 +119,7 @@ classDiagram
 
     note for PaymentMethod "New payment providers only
 need to implement authorize()"
+
 ```
 ---
 
