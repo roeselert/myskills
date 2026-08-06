@@ -1,16 +1,63 @@
 
 ## name: Business Analyst Skill
-description: This guide provides a standardized approach for Business Analysts to write clear, high-quality User Stories and Acceptance Criteria
+description: This guide provides a standardized approach for Business Analysts to write clear, high-quality Use Cases and Acceptance Criteria
 
 
-## The User Story Template
+## The Use Case Template
 
-Every User Story must capture **who** wants the feature, **what** they need, and **why** it delivers business value.
+1. Use Case Overview
 
-*   **Title:** A concise, action-oriented phrase (e.g., *Empty Shopping Cart*).
-*   **Role (Who?):** As a `[user role]`...
-*   **Need (What?):** ...I need `[action/feature]`...
-*   **Benefit (Why?):** ...because `[value/reason]`.
+• Use Case Name:
+• Actor:
+• Stakeholders & Interests:
+• Goal:
+• Scope:
+• Preconditions:
+---
+
+2. Trigger
+
+• What event starts this use case?
+
+
+---
+
+3. Main Success Scenario (Basic Flow)
+
+*   `flow name(params) { ... }`: Indentation-based, sequential pseudo-code describing the exact logic path.
+*   `transaction { ... }`: Explicit wrapper within a flow ensuring all inner operations are atomic (all-or-nothing database transactions).
+
+---
+
+4. Alternative Flows
+
+*   `flow name(params) { ... }`: Indentation-based, sequential pseudo-code describing the exact logic path.
+*   `transaction { ... }`: Explicit wrapper within a flow ensuring all inner operations are atomic (all-or-nothing database transactions).
+
+---
+
+5. Exception Flows
+
+• Exception 1:• Error condition:
+• System response:
+
+*   `flow name(params) { ... }`: Indentation-based, sequential pseudo-code describing the exact logic path.
+*   `transaction { ... }`: Explicit wrapper within a flow ensuring all inner operations are atomic (all-or-nothing database transactions).
+
+---
+
+6. Business Rules
+
+• Rule 1
+• Rule 2
+
+
+---
+
+7. Data Requirements
+
+*   `entity Name { ... }`: Defines raw core domain models.
+
 
 ## Acceptance Criteria (Given-When-Then)
 
@@ -33,17 +80,9 @@ Do not use boilerplate keywords (`export`, `class`, `function`), async annotatio
 
 ## 💡 Practical Examples
 
-### Example 1: Password Reset
-*   **Title:** Password Reset via Email Link
-*   **Story:** **As a** registered customer, **I need** to request a password reset link via email, **because** I want to regain access to my account if I forget my login details.
-*   **Scenario 1: Successful request**
-    *   **Given:** The user is on the "Forgot Password" page.
-    *   **When:** The user enters their registered email address and clicks "Submit".
-    *   **Then:** The system sends an email containing a secure, time-sensitive reset link.
 
-### Example 2: Form Validation
-*   **Title:** Mandatory Field Validation during Signup
-*   **Story:** **As a** new visitor, **I need** to see instant validation errors on mandatory fields, **because** I want to fix mistakes immediately and complete my registration successfully.
+### Example: Form Validation
+
 *   **Scenario 1: Missing required field**
     *   **Given:** The user leaves the "Last Name" field empty.
     *   **When:** The user clicks the "Register" button.
