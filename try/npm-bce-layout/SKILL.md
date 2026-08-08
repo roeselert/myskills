@@ -1,6 +1,6 @@
 ---
 name: npm-bce-layout
-description: Structures Node.js/npm projects using Spring Boot and Gradle conventions - src/main plus src/test/unit and src/test/e2e, reverse-domain package folders such as de.roeselert.order, and Boundary-Control-Entity-View layering. Use this skill whenever the user sets up a new npm or Node project, adds a feature or component to one, asks where a file belongs, wires up package.json scripts, configures node:test, or mentions Spring Boot, Gradle or Maven layout, BCE, boundary/control/entity, or "de.roeselert" - even if they never name this convention explicitly. Also use when reviewing or refactoring an existing Node project toward this structure.
+description: Structures PWA/Node.js/npm projects using Spring Boot and Gradle conventions - src/main plus src/test/unit and src/test/e2e, reverse-domain package folders such as de.roeselert.order, and Boundary-Control-Entity-View layering. Use this skill whenever the user sets up a new npm, Node or PWA project, adds a feature or component to one, asks where a file belongs, wires up package.json scripts, configures node:test, or mentions Spring Boot, Gradle or Maven layout, BCE, boundary/control/entity, or "de.roeselert" - even if they never name this convention explicitly. Also use when reviewing or refactoring an existing Node project toward this structure.
 ---
 
 # npm project layout: Spring Boot conventions on Node
